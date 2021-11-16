@@ -1,9 +1,8 @@
-import TSP_GA
+# imports
 import TSP_SA
 import random
 
 # ignore build_graph()
-
 
 def build_graph():
 
@@ -31,7 +30,7 @@ def build_graph():
 
     return matrix
 
-
+# generate a fully connected random graph of size 'vertices'
 def build_graph2(vertices):
 
     # construct the matrix
@@ -52,21 +51,15 @@ def print_matrix(matrix):
         print(i)
 
 
+
+N = 20
 # check the matrix
-matrix = build_graph2(20)
-print('MATRIX')
+matrix = build_graph2(N)
+print('MATRIX REPRESENTATIONOF GRAPH')
 print_matrix(matrix)
 print()
-
-# GA
-# pop = TSP_GA.TSP_GA(10, 200, matrix)
-# pop.set_params(iterations=200)
-# pop.train()
 
 # SA
 pop = TSP_SA.TSP_SA(matrix, T_max=200)
 pop.run()
 
-# # check2
-# pop_print = [str(i) for i in pop.population]
-# print(pop_print)
